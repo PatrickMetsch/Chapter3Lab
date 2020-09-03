@@ -1,0 +1,30 @@
+﻿
+@model PriceQuotationModel
+@{
+    var culture = System.Globalization.CultureInfo
+        .CreateSpecificCulture("en-US");
+
+    ViewBag.title = "Price Quotation";
+}
+<h1>Future Value Calculator</h1>
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Subtotal">Subtotal:</label>
+        <input asp-for="Subtotal" />
+    </div>
+    <div>
+        <label asp-for="DiscountPercent">Discount Percent:</label>
+        <input asp-for="DiscountPercent" />
+    </div>
+    <div>
+        <label>Discount Amount:</label>
+        <input value='@ViewBag.DiscountAmount.ToString("C2", culture)' readonly>
+    </div>
+    <div>
+        <label>Total:</label>
+        <input value='@ViewBag.Total.ToString("C2", culture)' readonly>
+    </div>
+    <button type="submit">Calculate</button>
+    <a asp-action="Index">Clear</a>
+</form>
