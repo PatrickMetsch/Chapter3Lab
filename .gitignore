@@ -1,4 +1,4 @@
 bin/
 obj/
 wwwroot/*
-!wwwroot/css/custom.css
+!wwwroot/css/*
