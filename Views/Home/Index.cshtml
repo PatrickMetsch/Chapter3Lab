@@ -6,25 +6,35 @@
 
     ViewBag.title = "Price Quotation";
 }
-<h1>Future Value Calculator</h1>
-<form asp-action="Index" method="post">
-    <div asp-validation-summary="All"></div>
-    <div>
-        <label asp-for="Subtotal">Subtotal:</label>
-        <input asp-for="Subtotal" />
+<div class="jumbotron">
+    <h1 class="text-center">
+        <span class="fas fa-money-bill-alt"></span>
+        <span>Price Quotation</span>
+    </h1>
+</div>
+<form asp-action="Index" method="post" class="form-horizontal">
+    <div class="row form-group">
+        <label asp-for="Subtotal" class="control-label col">Subtotal:</label>
+        <input asp-for="Subtotal" class="form-control col-sm-3 col-12"/>
+        <span asp-validation-for="Subtotal" class="text-danger col-sm-5 col-12"></span>
     </div>
-    <div>
-        <label asp-for="DiscountPercent">Discount Percent:</label>
-        <input asp-for="DiscountPercent" />
+    <div class="row form-group">
+        <label asp-for="DiscountPercent" class="control-label col">Discount Percent:</label>
+        <input asp-for="DiscountPercent" class="form-control col-sm-3 col-12" />
+        <span asp-validation-for="DiscountPercent" class="text-danger col-sm-5 col-12"></span>
     </div>
-    <div>
-        <label>Discount Amount:</label>
-        <input value='@ViewBag.DiscountAmount.ToString("C2", culture)' readonly>
+    <div class="row form-group">
+        <label class="control-label col">Discount Amount:</label>
+        <input value='@ViewBag.DiscountAmount.ToString("C2", culture)' readonly class="form-control col-sm-3 col-12" />
+        <span class="col-sm-5 col-12"></span>
     </div>
-    <div>
-        <label>Total:</label>
-        <input value='@ViewBag.Total.ToString("C2", culture)' readonly>
+    <div class="row form-group">
+        <label class="control-label col">Total:</label>
+        <input value='@ViewBag.Total.ToString("C2", culture)' readonly class="form-control col-sm-3 col-12" />
+        <span class="col-sm-5 col-12"></span>
     </div>
-    <button type="submit">Calculate</button>
-    <a asp-action="Index">Clear</a>
+    <div class="row form-group">
+        <button class="btn btn-primary" type="submit">Calculate</button>
+        <button class="btn btn-primary" asp-action="Index">Clear</button>
+    </div>
 </form>
