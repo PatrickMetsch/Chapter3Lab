@@ -1,0 +1,28 @@
+﻿body {
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron {
+    background-color: #0069d9;
+    border: 1px #0062cc;
+    color: white;
+}
+
+.btn-primary {
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+}
+
+.form-group {
+    margin: 1rem 1rem auto;
+}
+
+.control-label {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
